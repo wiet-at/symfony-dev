@@ -23,7 +23,10 @@ RUN apt-get update \
     && echo 'deb https://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list \
     && apt-key adv --fetch-keys 'https://dl.yarnpkg.com/debian/pubkey.gpg' \
     && apt-get update \
-    && apt-get install -y yarn
+    && apt-get install -y yarn \
+    && apt-get -y autoremove \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN groupadd -g $SYMFONY_DEV_GROUP symfony-dev \
     && useradd -ms /bin/bash --no-user-group -g $SYMFONY_DEV_GROUP -u $SYMFONY_DEV_USER symfony-dev \
