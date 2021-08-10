@@ -9,7 +9,7 @@ Similar to what Laravel Sail is to Laravel.
 ### Create new project
 Use the `create-project.sh` script in this repository to create a new project locally.
 
-    curl -s 'https://raw.githubusercontent.com/1994rstefan/symfony-dev/master/script/create-project.sh' | bash -s -- my-project --full
+    curl -s 'https://raw.githubusercontent.com/1994rstefan/symfony-dev/master/bin/create-project.sh' | bash -s -- my-project --full
 
 ### DEV environment
 WIP
