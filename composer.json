@@ -1,6 +1,6 @@
 {
     "name": "1994rstefan/symfony-dev",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "description": "Docker development environment for Symfony applications.",
     "authors": [
         {
@@ -8,5 +8,8 @@
             "email": "dev@stefan-reisinger.at"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "dist/symfony-dev-cli"
+    ]
 }

@@ -1,0 +1,7 @@
+services:
+  symfony-dev:
+    image: ghcr.io/1994rstefan/symfony-dev:latest
+    ports:
+      - '8000:8000'
+    volumes:
+      - '../../../:/app'

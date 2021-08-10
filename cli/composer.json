@@ -1,0 +1,20 @@
+{
+  "name": "1994rstefan/symfony-dev-cli",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Symfony DEV",
+      "email": "cli@symfony-dev.local"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "symfony/console": "^5.3",
+    "symfony/process": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "SymfonyDevCli\\": "src/"
+    }
+  }
+}

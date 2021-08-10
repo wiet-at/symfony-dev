@@ -5,7 +5,7 @@ ENV SYMFONY_DEV_GROUP=1000
 
 RUN apt-get update \
     # System base
-    && apt-get install -y ca-certificates git gnupg gosu wget \
+    && apt-get install -y ca-certificates git gnupg gosu unzip wget \
     # PHP
     && echo 'deb https://packages.sury.org/php/ buster main' > /etc/apt/sources.list.d/sury-php.list \
     && apt-key adv --fetch-keys 'https://packages.sury.org/php/apt.gpg' \
@@ -33,6 +33,9 @@ RUN groupadd -g $SYMFONY_DEV_GROUP symfony-dev \
     && gosu $SYMFONY_DEV_USER git config --global user.name "Symfony DEV" \
     && gosu $SYMFONY_DEV_USER git config --global user.email "cli@symfony-dev.local"
 
+EXPOSE 8000
+
 WORKDIR /app
 COPY entrypoint.sh /usr/local/bin/docker-entrypoint
+COPY symfony-dev-cli.phar /usr/local/bin/symfony-dev-cli
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
