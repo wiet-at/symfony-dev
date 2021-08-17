@@ -1,11 +1,11 @@
 {
-    "name": "1994rstefan/symfony-dev",
-    "version": "0.3.3",
+    "name": "wiet/symfony-dev",
+    "version": "0.3.4",
     "description": "Docker development environment for Symfony applications.",
     "authors": [
         {
             "name": "Stefan Reisinger",
-            "email": "dev@stefan-reisinger.at"
+            "email": "s.reisinger@wiet.at"
         }
     ],
     "require": {},
