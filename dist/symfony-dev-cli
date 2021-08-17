@@ -3,3 +3,13 @@
 export SYMFONY_DEV_USER="${SYMFONY_DEV_USER:-$(id -u)}"
 export SYMFONY_DEV_GROUP="${SYMFONY_DEV_GROUP:-$(id -g)}"
 
+case "$1" in
+php | symfony | composer | node | npm | yarn)
+  # shellcheck disable=SC2068
+  docker-compose exec -u symfony-dev -- symfony-dev $@
+  ;;
+*)
+  # shellcheck disable=SC2068
+  docker-compose $@
+  ;;
+esac

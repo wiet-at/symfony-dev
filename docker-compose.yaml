@@ -1,7 +1,18 @@
 services:
   symfony-dev:
     image: ghcr.io/1994rstefan/symfony-dev:latest
+    command: [ 'symfony', 'local:server:start', '--no-tls', '--port=8000' ]
     ports:
-      - '8000:8000'
+      - '${SD_LOCAL_IP:?}:80:8000'
     volumes:
       - '../../../:/app'
+  db:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MARIADB_DATABASE: symfony_dev
+      MARIADB_USER: symfony_dev
+      MARIADB_PASSWORD: symfony_dev
+    ports:
+      - '${SD_LOCAL_IP:?}:3306:3306'
