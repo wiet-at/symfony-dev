@@ -8,6 +8,13 @@ php | symfony | composer | node | npm | yarn)
   # shellcheck disable=SC2068
   docker-compose exec -u symfony-dev -- symfony-dev $@
   ;;
+down)
+  read 'Are you sure you want to stop and remove resources? [yN]' yn
+  if [ "$yn" = 'Y' ] || [ "$yn" = 'y' ]; then
+    # shellcheck disable=SC2068
+    docker-compose $@
+    fi
+  ;;
 *)
   # shellcheck disable=SC2068
   docker-compose $@

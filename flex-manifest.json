@@ -1,7 +1,7 @@
 {
   "env": {
     "COMPOSE_PROJECT_NAME": "test-project",
-    "COMPOSE_FILE": "./vendor/1994rstefan/symfony-dev/docker-compose.yaml",
-    "PROJECT_LOCAL_IP": "127.0.1.1"
+    "COMPOSE_FILE": "./vendor/wiet/symfony-dev/docker-compose.yaml",
+    "PROJECT_LOCAL_IP": "127.1.2.3"
   }
 }
