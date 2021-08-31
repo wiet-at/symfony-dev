@@ -9,7 +9,8 @@ php | symfony | composer | node | npm | yarn)
   docker-compose exec -u symfony-dev -- symfony-dev $@
   ;;
 down)
-  read 'Are you sure you want to stop and remove resources? [yN]' yn
+  printf 'Are you sure you want to stop and remove resources? [yN] '
+  read yn
   if [ "$yn" = 'Y' ] || [ "$yn" = 'y' ]; then
     # shellcheck disable=SC2068
     docker-compose $@
