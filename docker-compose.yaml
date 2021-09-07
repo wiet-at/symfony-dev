@@ -2,6 +2,7 @@ services:
   symfony-dev:
     image: ghcr.io/1994rstefan/symfony-dev:latest
     command: [ 'symfony', 'local:server:start', '--no-tls', '--port=8000' ]
+    restart: 'unless-stopped'
     ports:
       - '${SD_LOCAL_IP:?}:80:8000'
     volumes:
@@ -16,3 +17,8 @@ services:
       MARIADB_PASSWORD: symfony_dev
     ports:
       - '${SD_LOCAL_IP:?}:3306:3306'
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: always
+    ports:
+      - '${SD_LOCAL_IP:?}:81:8025'
