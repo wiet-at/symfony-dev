@@ -1,3 +1,6 @@
+# !!!WIP!!!
+This project is work in progress - use on your own risk
+
 # Symfony DEV CLI
 Docker based CLI and DEV environment for symfony projects.
 Similar to what Laravel Sail is to Laravel.
