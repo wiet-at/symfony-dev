@@ -82,15 +82,7 @@ class CreateProjectCommand extends Command
             return Command::FAILURE;
         }
 
-        $repository = new \stdClass();
-        $repository->type = 'github';
-        $repository->url = 'https://github.com/1994rstefan/symfony-dev.git';
-        $composerJson = json_decode(file_get_contents($directory . '/composer.json'));
-        $composerJson->repositories = $composerJson->repositories ?? [];
-        $composerJson->repositories[] = $repository;
-        file_put_contents($directory . '/composer.json', json_encode($composerJson, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
-
-        $process = new Process(['composer', 'require', '--dev', '1994rstefan/symfony-dev:master@dev']);
+        $process = new Process(['composer', 'require', '--dev', 'wiet-at/symfony-dev:dev-main@dev']);
         $process->setTty(true);
         $process->mustRun();
         unset($process);
