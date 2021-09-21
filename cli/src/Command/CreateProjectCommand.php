@@ -65,7 +65,6 @@ class CreateProjectCommand extends Command
                 $input->getArgument('symfony-cli-args')
             )
         );
-        $process->setTty(true);
         $process->mustRun();
         echo $process->getOutput();
         unset($process);
@@ -83,7 +82,6 @@ class CreateProjectCommand extends Command
         }
 
         $process = new Process(['composer', 'require', '--dev', 'wiet-at/symfony-dev:dev-main@dev']);
-        $process->setTty(true);
         $process->mustRun();
         unset($process);
 
