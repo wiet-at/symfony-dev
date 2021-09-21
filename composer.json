@@ -1,6 +1,6 @@
 {
     "name": "wiet-at/symfony-dev",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "Docker based development environment for Symfony applications.",
     "authors": [
         {
