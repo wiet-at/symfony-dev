@@ -81,7 +81,7 @@ class CreateProjectCommand extends Command
             return Command::FAILURE;
         }
 
-        $process = new Process(['composer', 'require', '--dev', 'wiet-at/symfony-dev:dev-main@dev']);
+        $process = new Process(['composer', 'require', '--dev', 'wiet-at/symfony-dev']);
         $process->mustRun();
         unset($process);
 
