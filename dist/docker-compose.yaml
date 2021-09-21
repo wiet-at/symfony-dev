@@ -1,6 +1,6 @@
 services:
   symfony-dev:
-    image: ghcr.io/1994rstefan/symfony-dev:latest
+    image: ghcr.io/wiet-at/symfony-dev/cli:latest
     command: [ 'symfony', 'local:server:start', '--no-tls', '--port=8000' ]
     restart: 'unless-stopped'
     ports:
@@ -9,7 +9,7 @@ services:
       - '../../../:/app'
   db:
     image: mariadb:10.6
-    restart: always
+    restart: 'unless-stopped'
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
       MARIADB_DATABASE: symfony_dev
@@ -19,6 +19,6 @@ services:
       - '${SD_LOCAL_IP:?}:3306:3306'
   mailhog:
     image: mailhog/mailhog:latest
-    restart: always
+    restart: 'unless-stopped'
     ports:
       - '${SD_LOCAL_IP:?}:81:8025'
