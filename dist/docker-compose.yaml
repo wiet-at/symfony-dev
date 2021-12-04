@@ -7,6 +7,9 @@ services:
       - '${SD_LOCAL_IP:?}:80:8000'
     volumes:
       - '../../../:/app'
+    environment:
+      - SYMFONY_DEV_USER=${SYMFONY_DEV_USER}
+      - SYMFONY_DEV_GROUP=${SYMFONY_DEV_GROUP}
   db:
     image: mariadb:10.6
     restart: 'unless-stopped'

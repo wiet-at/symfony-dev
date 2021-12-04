@@ -2,9 +2,11 @@
 
 if [ -n "$SYMFONY_DEV_USER" ] && [ "$SYMFONY_DEV_USER" != "$(id -u symfony-dev)" ]; then
   usermod -u "$SYMFONY_DEV_USER" symfony-dev
+  chown -Rf "$SYMFONY_DEV_USER" /home/symfony-dev
 fi
 if [ -n "$SYMFONY_DEV_GROUP" ] && [ "$SYMFONY_DEV_GROUP" != "$(id -g symfony-dev)" ]; then
   groupmod -g "$SYMFONY_DEV_GROUP" symfony-dev
+  chown -Rf ":$SYMFONY_DEV_GROUP" /home/symfony-dev
 fi
 
 if [ $# -gt 0 ]; then
