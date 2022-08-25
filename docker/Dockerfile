@@ -10,8 +10,8 @@ RUN apt-get update \
     && echo 'deb https://packages.sury.org/php/ buster main' > /etc/apt/sources.list.d/sury-php.list \
     && apt-key adv --fetch-keys 'https://packages.sury.org/php/apt.gpg' \
     && apt-get update \
-    && apt-get install -y php8.0-cli php8.0-gd php8.0-curl php8.0-mysql \
-    php8.0-mbstring php8.0-xml php8.0-zip php8.0-intl php8.0-xdebug \
+    && apt-get install -y php8.1-cli php8.1-gd php8.1-curl php8.1-mysql php8.1-pgsql \
+    php8.1-mbstring php8.1-xml php8.1-zip php8.1-intl php8.1-xdebug \
     # Composer
     && php -r 'readfile("http://getcomposer.org/installer");' | php -- --install-dir=/usr/bin/ --filename=composer \
     # Symfony CLI
